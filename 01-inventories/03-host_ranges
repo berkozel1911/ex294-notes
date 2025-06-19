@@ -1,0 +1,9 @@
+[ourcluster]
+rhcelab[0:2]
+
+# experiment: check if that shit support something like:
+# 192.168.122.[10:12]
+
+# also it supports increments like:
+# [ourcluster]
+# rhcelab[0:2:2]

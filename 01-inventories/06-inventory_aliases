@@ -1,0 +1,4 @@
+[ourcluster]
+rhcelab0 ansible_host=192.168.122.10
+rhcelab1 ansible_host=192.168.122.11
+rhcelab2 ansible_host=192.168.122.12

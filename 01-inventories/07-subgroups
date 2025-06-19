@@ -1,0 +1,10 @@
+[webanddb]
+rhcelab0
+rhcelab1
+
+[hpc]
+rhcelab2
+
+[ourcluster]
+webanddb
+hpc

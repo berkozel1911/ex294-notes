@@ -1,0 +1,3 @@
+[ourcluster]
+192.168.122.10 ansible_port=2222
+192.168.122.11 ansible_port=222

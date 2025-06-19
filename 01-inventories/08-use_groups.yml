@@ -1,0 +1,9 @@
+---
+- name: This is an Ansible playbook that only affects dbservers
+  hosts: dbservers
+  tasks:
+    - name: Ensure nginx service is not running 
+      systemd_service:
+        name: nginx
+        enabled: no
+        state: masked
