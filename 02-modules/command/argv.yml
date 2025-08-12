@@ -1,0 +1,17 @@
+---
+- name: argv example on command module
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Task1
+      command:
+        argv:
+          - echo
+          - hello
+          - world
+      register: echo
+
+    - name: Print Task1 output
+      debug:
+        msg: "{{ echo.stdout_lines }}"

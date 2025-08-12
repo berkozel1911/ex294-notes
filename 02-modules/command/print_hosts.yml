@@ -1,0 +1,13 @@
+---
+- name: Print the contents of /etc/hosts
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Read the contents of /etc/hosts
+      command: cat /etc/hosts
+      register: hosts
+
+    - name: Print the contents of /etc/hosts
+      debug:
+        msg: "{{ hosts.stdout_lines }}"

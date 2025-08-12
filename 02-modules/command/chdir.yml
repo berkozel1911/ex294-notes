@@ -1,0 +1,15 @@
+---
+- name: chdir example on command module
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: chdir to /etc
+      command: cat hosts
+      args:
+        chdir: /etc
+      register: hosts
+
+    - name: Print the contents of /etc/hosts file.
+      debug:
+        msg: "{{ hosts.stdout_lines }}"
