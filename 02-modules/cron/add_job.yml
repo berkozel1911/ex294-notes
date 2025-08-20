@@ -1,0 +1,29 @@
+---
+- name: Add simple cronjob
+  hosts: all
+  become: true
+  vars:
+    ansible_user: ansible
+
+  tasks:
+    - name: Add the cronjob
+      cron:
+        name: "Reboot the server in every 5 minutes"
+        minute: "*/5"
+        user: root
+        job: "/usr/bin/reboot"
+        state: present
+      tags:
+        - never
+        - add
+
+    - name: Remove the cronjob 
+      cron:
+        name: "Reboot the server in every 5 minutes"
+        minute: "*/5"
+        user: root
+        job: "/usr/bin/reboot"
+        state: absent
+      tags:
+        - never
+        - remove 
