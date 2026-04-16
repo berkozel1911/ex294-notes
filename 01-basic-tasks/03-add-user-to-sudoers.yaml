@@ -1,0 +1,13 @@
+---
+- name: Add user to sudoers with full root rights
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Add the user to sudoers
+      community.general.sudoers:
+        name: give-all
+        user: "{{ user_name }}"
+        commands: ALL 
+        state: present
+        nopassword: false

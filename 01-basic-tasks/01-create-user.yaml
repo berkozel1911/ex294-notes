@@ -1,0 +1,16 @@
+---
+- name: Create user on the machine
+  hosts: all
+
+  vars:
+    ansible_user: root
+
+  tasks:
+    - name: Create the given user.
+      ansible.builtin.user:
+        name: scma
+        comment: Sari Cizmeli Mehmet Aga
+        uid: 1010
+        group: wheel
+        create_home: yes
+        shell: /bin/sh
